@@ -8,4 +8,6 @@ import com.milton.entity.Perfil;
 @Repository
 public interface PerfilRepository extends MongoRepository<Perfil, String> {
 
+	Perfil findByNome(String nome);
+	
 }
