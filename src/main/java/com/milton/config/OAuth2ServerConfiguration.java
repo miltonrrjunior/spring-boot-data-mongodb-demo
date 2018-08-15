@@ -66,10 +66,11 @@ public class OAuth2ServerConfiguration {
 
 		@Override
 		public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-			clients .inMemory().withClient("mobile")
+			clients.inMemory().withClient("mobile")
 					.authorizedGrantTypes("password", "authorization_code", "refresh_token")
 					.scopes("bar", "read", "write").refreshTokenValiditySeconds(20000).resourceIds(RESOURCE_ID)
-					.secret("123").accessTokenValiditySeconds(20000);
+					//.secret("123")
+					.secret("$2a$10$Gfv2Xu8.5adApRpSRbrr0OFp2odpgYwFgmZi2Q0jZq1D3mCHVO8bK").accessTokenValiditySeconds(20000);
 		}
 
 		@Bean
